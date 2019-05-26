@@ -48,14 +48,12 @@ class Net(nn.Module):
             nn.Dropout(0.2),
             nn.ReLU(),
             nn.Linear(256, 128),
-            nn.Dropout(0.2),
-            nn.ReLU()
+            nn.Dropout(0.2)
         )
         
         self.branch2 = nn.Sequential(
             nn.Linear(100, 128),
-            nn.Dropout(0.2),
-            nn.ReLU()
+            nn.Dropout(0.2)
         )
         
         self.relu = nn.ReLU()
@@ -104,12 +102,10 @@ print(model)
         (5): ReLU()
         (6): Linear(in_features=256, out_features=128, bias=True)
         (7): Dropout(p=0.2)
-        (8): ReLU()
       )
       (branch2): Sequential(
         (0): Linear(in_features=100, out_features=128, bias=True)
         (1): Dropout(p=0.2)
-        (2): ReLU()
       )
       (relu): ReLU()
       (fc): Linear(in_features=256, out_features=10, bias=True)
@@ -165,16 +161,16 @@ for epoch in range(1, 101):
         
 ```
 
-    Epoch: 10 	Training Loss: 1.5868	Validation Loss: 1.6570
-    Epoch: 20 	Training Loss: 1.5098	Validation Loss: 1.5889
-    Epoch: 30 	Training Loss: 1.4951	Validation Loss: 1.5574
-    Epoch: 40 	Training Loss: 1.4901	Validation Loss: 1.4972
-    Epoch: 50 	Training Loss: 1.4856	Validation Loss: 1.5563
-    Epoch: 60 	Training Loss: 1.4821	Validation Loss: 1.5339
-    Epoch: 70 	Training Loss: 1.4842	Validation Loss: 1.5560
-    Epoch: 80 	Training Loss: 1.4853	Validation Loss: 1.5401
-    Epoch: 90 	Training Loss: 1.4831	Validation Loss: 1.5438
-    Epoch: 100 	Training Loss: 1.4849	Validation Loss: 1.5475
+    Epoch: 10 	Training Loss: 1.6049	Validation Loss: 1.7425
+    Epoch: 20 	Training Loss: 1.5146	Validation Loss: 1.6019
+    Epoch: 30 	Training Loss: 1.4953	Validation Loss: 1.5975
+    Epoch: 40 	Training Loss: 1.4902	Validation Loss: 1.5856
+    Epoch: 50 	Training Loss: 1.4865	Validation Loss: 1.5897
+    Epoch: 60 	Training Loss: 1.4841	Validation Loss: 1.5992
+    Epoch: 70 	Training Loss: 1.4875	Validation Loss: 1.5768
+    Epoch: 80 	Training Loss: 1.4864	Validation Loss: 1.6322
+    Epoch: 90 	Training Loss: 1.4842	Validation Loss: 1.5483
+    Epoch: 100 	Training Loss: 1.4886	Validation Loss: 1.5205
 
 
 
@@ -190,10 +186,5 @@ acc = accuracy_score(np.argmax(y_pred, axis = 1), y_test.cpu().numpy())
 print(f'Accuracy of the residual block net is {acc*100}%')
 ```
 
-    Accuracy of the residual block net is 91.0%
+    Accuracy of the residual block net is 93.0%
 
-
-
-```python
-
-```
